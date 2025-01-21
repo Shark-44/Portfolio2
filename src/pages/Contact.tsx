@@ -28,32 +28,37 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Formulaire soumis :", formData);
+    e.preventDefault(); 
+      console.log("Formulaire soumis :", formData); 
     setIsSubmitting(true);
     
     console.log("Soumission en cours...");
+  
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
+      console.log("Réponse serveur :", response);
+  
       if (response.ok) {
         setStatus("Message envoyé avec succès !");
+        console.log("Message envoyé !");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("Erreur lors de l'envoi du message.");
+        console.log("Erreur serveur :", response.status);
       }
     } catch (error) {
-      console.error(error);
+      console.error("Erreur inattendue :", error);
       setStatus("Une erreur inattendue est survenue.");
     }
-
+  
     setIsSubmitting(false);
   };
-
+  
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6">
       <Navbar />
