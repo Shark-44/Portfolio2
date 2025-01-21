@@ -1,6 +1,19 @@
 import { useState } from "react";
 
-const Contact: React.FC = () => {
+import github from '../assets/images/github.png';
+import linkedin from '../assets/images/linkedin.png';
+
+import CV from '../assets/images/CVJoanny.png';
+import CVwh from '../assets/images/CVJoannywh.png';
+import linkedinwh from '../assets/images/linkedin-white.png';
+
+import githubwh from '../assets/images/githubwh.png';
+
+const Contact = () => {
+  const [over1, setOver1] = useState(false);
+  const [over2, setOver2] = useState(false);
+  const [over3, setOver3] = useState(false);
+  const [over4, setOver4] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,7 +54,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-50 p-6">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6">
       <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Contactez-moi</h2>
         <form onSubmit={handleSubmit}>
@@ -105,7 +118,22 @@ const Contact: React.FC = () => {
             {isSubmitting ? "Envoi..." : "Envoyer"}
           </button>
         </form>
+
       </div>
+
+      <h4 className="text-center my-6 text-lg font-semibold text-gray-800 border-t border-gray-300 pt-4">
+      Ou suivez-moi
+      </h4>
+
+      <div className='flex mt-4 p-4 bg-blue-500 rounded-lg'>
+            <a href="https://github.com/Shark-44" target="_blank" rel="noopener noreferrer"><img className="icone" src={over1 ? githubwh : github} onMouseOver={() => setOver1(true)}
+            onMouseOut={() => setOver1(false)} alt="github" /></a>        
+            <a href="https://www.linkedin.com/in/joanny-bernardeau-6a9b51bb" target="_blank"><img className="icone" src={over2 ? linkedinwh : linkedin} onMouseOver={() => setOver2(true)}
+            onMouseOut={() => setOver2(false)} alt="linkedin" /></a>
+
+            <a href="https://1drv.ms/b/c/f1d07a223c005096/EaTPToTHVwdDl_Keqy21epUB16an95T-8uxqIlw092BUEg?e=52qJkg" target="_blank"><img className="icone" src={over4 ? CVwh : CV} onMouseOver={() => setOver4(true)}
+            onMouseOut={() => setOver4(false)} alt="cv" /></a>
+            </div>
     </div>
   );
 };
