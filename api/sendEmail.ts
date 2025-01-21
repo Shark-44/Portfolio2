@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import sgMail from "@sendgrid/mail";
+const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
@@ -9,7 +9,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
     const msg = {
       to: "joanny.bernardeau@gmail.com", 
-      from: "contact@ha-jb.ovh", // Adresse associée à ton domaine (configuré avec SendGrid)
+      from: "contact@ha-jb.ovh", 
       subject: `Nouveau message de ${name}`,
       text: message,
       html: `
