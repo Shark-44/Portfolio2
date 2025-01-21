@@ -12,7 +12,6 @@ import githubwh from '../assets/images/githubwh.png';
 const Contact = () => {
   const [over1, setOver1] = useState(false);
   const [over2, setOver2] = useState(false);
-  const [over3, setOver3] = useState(false);
   const [over4, setOver4] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
