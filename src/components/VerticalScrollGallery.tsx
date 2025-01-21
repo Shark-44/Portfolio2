@@ -252,7 +252,7 @@ const SmoothVerticalCarousel = () => {
             }`}
             style={trapezeStyle}
           >
-            <div className="h-52 w-full md:w-1/2 lg:w-7/12 p-2 flex flex-col items-center justify-center border bg-white rounded-lg shadow-md">
+            <div className="h-52 w-full md:w-1/2 lg:w-7/12 p-2 flex flex-col items-center justify-center   shadow-md">
               {currentCard.year && (
                 <p className="text-yellow-400 text-xl">{currentCard.year}</p>
               )}
@@ -263,7 +263,7 @@ const SmoothVerticalCarousel = () => {
                     alt={currentCard.title2 || currentCard.title1}
                     className="h-28 w-56 object-cover rounded-full"
                   />
-                  <h2 className="text-lg font-semibold text-blue-600">
+                  <h2 className="text-xl font-semibold text-lime-200">
                     {currentCard.title2}
                   </h2>
                 </div>
@@ -272,7 +272,7 @@ const SmoothVerticalCarousel = () => {
                 <h2 className="text-lg font-bold text-black">{currentCard.title1}</h2>
               )}
               {currentCard.paragrahe && (
-                <p className="text-sm text-gray-700 text-center mt-1">
+                <p className="text-sm text-white text-center mt-1">
                   {currentCard.paragrahe}
                 </p>
               )}
