@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import github from '../assets/images/github.png';
 import linkedin from '../assets/images/linkedin.png';
-
 import CV from '../assets/images/CVJoanny.png';
 import CVwh from '../assets/images/CVJoannywh.png';
 import linkedinwh from '../assets/images/linkedin-white.png';
-
 import githubwh from '../assets/images/githubwh.png';
+
+import Navbar from "../components/Navbar";
 
 const Contact = () => {
   const [over1, setOver1] = useState(false);
@@ -54,6 +54,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6">
+      <Navbar />
       <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6">Contactez-moi</h2>
         <form onSubmit={handleSubmit}>
