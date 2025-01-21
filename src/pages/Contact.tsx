@@ -29,8 +29,10 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Formulaire soumis :", formData);
     setIsSubmitting(true);
-
+    
+    console.log("Soumission en cours...");
     try {
       const response = await fetch("/api/sendEmail", {
         method: "POST",

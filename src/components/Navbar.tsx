@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="fixed top-0 left-0 w-full z-50 bg-opacity-40 bg-gray-800" style={{ backdropFilter: "blur(10px)" }}>
+    <div className="fixed top-0 left-0 w-full z-50 bg-opacity-40
+     bg-gray-800" style={{ backdropFilter: "blur(10px)" }}>
       <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
         <li>
           <Link

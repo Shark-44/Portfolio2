@@ -60,14 +60,26 @@ const Home: React.FC = () => {
               setAnimationEnd={setAnimationEnd}
             />
           )}
-          {  animationEnd && (
-          <img src= {moi} alt=""    
-                style={{
-                clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'
-                }}    
-                className={`h-60 w-60 p-4 ml-52 mb-4
-                ${animationEnd ? "animate-spin" : ""}
-                `} />)}
+{animationEnd && (
+  <div
+    className="relative h-72 w-72 flex items-center justify-center bg-yellow-300"
+    style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+  >
+    {/* Bordure simulée */}
+    <div
+      className="absolute top-0 left-0 h-full w-full "
+      style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
+    ></div>
+    {/* Image */}
+    <img
+      src={moi}
+      alt=""
+      className={`h-60 w-60 ${animationEnd ? 'animate-spin' : ''}`}
+    />
+  </div>
+)}
+
+
    
         </div>
     
