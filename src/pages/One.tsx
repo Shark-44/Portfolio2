@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import PageTransition from "../components/PageTransition";
 import VerticalScrollGallery from "../components/VerticalScrollGallery";
 import oreille from "../assets/images/oreille.webp"
+import oreilleOff from "../assets/images/oreilleOff.webp"
 import { useState } from "react";
  
 
@@ -9,19 +10,25 @@ import { useState } from "react";
 
 function One() {
   const [mute, setMute] = useState<number>(0.5);
-const handlemute = () => {
-  if (mute === 0.5) {
-    setMute(0.0);
-  } else {
-    setMute(0.5)
+
+  const handlemute = () => {
+    if (mute === 0.5) {
+      setMute(0.0);
+    } else {
+      setMute(0.5)
+    }
   }
-}
 
     return (
       <PageTransition>
         <Navbar />
       <div className="w-full bg-white pt-4  flex flex-col justify-center items-center">
-      <img src={oreille} alt="" className=" absolute bottom-2 right-2 h-20 w-20" onClick={handlemute}/>
+      <img
+          src={mute === 0.0 ? oreilleOff : oreille} 
+          alt=""
+          className="absolute bottom-2 right-2 h-20 w-20"
+          onClick={handlemute}
+        />
       {/* Parent */}
       <h2 className="animate-blink text-yellow-500 text-xl font-bold">Scroll !</h2>
       <div className="w-[90%] h-[86vh] bg-black flex justify-center items-center overflow-visible relative">

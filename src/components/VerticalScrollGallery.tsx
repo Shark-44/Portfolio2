@@ -9,7 +9,7 @@ import {  CardStates } from '../types/types';
 
 
 interface SmoothVerticalCarouselProps {
-  mute: number;  // mute est un nombre, représentant le volume
+  mute: number;  
 }
 
 
@@ -17,7 +17,7 @@ const SmoothVerticalCarousel = ({ mute }: SmoothVerticalCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-console.log(mute)
+
   const scrollSound = new Howl({
     src: [roly], 
     volume: mute,
