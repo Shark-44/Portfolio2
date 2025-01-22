@@ -1,7 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import * as sgMail from "@sendgrid/mail";
+import SendGrid from "@sendgrid/mail";
 
-// Type pour les erreurs SendGrid
 interface SendGridError {
   response?: {
     status?: number;
@@ -11,7 +10,6 @@ interface SendGridError {
   message?: string;
 }
 
-// Type pour les données du formulaire
 interface FormData {
   name: string;
   email: string;
@@ -20,10 +18,10 @@ interface FormData {
 
 const sendgridApiKey = process.env.SENDGRID_API_KEY;
 if (!sendgridApiKey) {
-  throw new Error("SENDGRID_API_KEY is missing. Please set it in the environment variables.");
+  throw new Error("SENDGRID_API_KEY is missing");
 }
 
-sgMail.setApiKey(sendgridApiKey);
+SendGrid.setApiKey(sendgridApiKey);
 
 const handler = async (req: VercelRequest, res: VercelResponse) => {
   if (req.method !== "POST") {
@@ -56,7 +54,7 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
       `
     };
 
-    await sgMail.send(msg);
+    await SendGrid.send(msg);
     return res.status(200).json({ message: "Message envoyé avec succès !" });
   } catch (error: unknown) {
     console.error("Erreur lors de l'envoi du message:", error);
