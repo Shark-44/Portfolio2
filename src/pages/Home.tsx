@@ -4,6 +4,8 @@ import goldorak from "../assets/images/goldorak.jpg";
 import Navbar from "../components/Navbar";
 import AnimatedTitle from "../components/AnimatedTitle";
 import moi from "../assets/images/moi.png"
+import losange from "../assets/images/losange.png" 
+
 
 const Home: React.FC = () => {
   const [maskStyle, setMaskStyle] = useState<string>(`url(${test})`);
@@ -62,19 +64,15 @@ const Home: React.FC = () => {
           )}
 {animationEnd && (
   <div
-    className="relative h-72 w-72 flex items-center justify-center bg-yellow-300"
+    className="relative h-80 w-80 flex items-center justify-center ml-32"
     style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
   >
-    {/* Bordure simulée */}
-    <div
-      className="absolute top-0 left-0 h-full w-full "
-      style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}
-    ></div>
-    {/* Image */}
+    <img src={losange} alt="" className="absolute h-80 w-80 z-10 scale-125" />
+   
     <img
       src={moi}
       alt=""
-      className={`h-60 w-60 ${animationEnd ? 'animate-spin' : ''}`}
+      className={`h-60 w-60 absolute z-20  p-4 ${animationEnd ? 'animate-spin' : ''}`}
     />
   </div>
 )}

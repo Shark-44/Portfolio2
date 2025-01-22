@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        spin: " spin 2s linear 2 ",
+        spin: " spin 2s linear 1 ",
         blink: 'blink 1s 15',
 
       },
