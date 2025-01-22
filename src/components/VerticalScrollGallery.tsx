@@ -9,6 +9,15 @@ import angular from "../assets/images/angular.png";
 import pizza from "../assets/images/pizza.png";
 import tetris from "../assets/images/tetris.png";
 import Memo from "../assets/images/memo.png";
+import { Howl } from 'howler';
+import roly from '../assets/audio/roly-poly.mp3';
+
+const scrollSound = new Howl({
+  src: [roly], // Remplacez par le chemin de votre fichier son
+  volume: 0.5,
+  preload: true,
+  html5: true
+});
 
 // Interface pour une carte
 interface Card {
@@ -150,12 +159,15 @@ const SmoothVerticalCarousel = () => {
     setTimeout(() => setIsScrolling(false), 400);
 
     if (event.deltaY > 0) {
+      scrollSound.rate(1.0);
       setDirection(1);
       setCurrentIndex((prev) => getNextIndex(prev));
     } else {
+      scrollSound.rate(0.9);
       setDirection(-1);
       setCurrentIndex((prev) => getPrevIndex(prev));
     }
+    scrollSound.play();
   };
 
   useEffect(() => {

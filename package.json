@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -17,10 +16,12 @@
     "@mui/material": "^6.4.0",
     "@react-spring/web": "^9.7.5",
     "@sendgrid/mail": "^8.1.4",
+    "@types/howler": "^2.2.12",
     "@vercel/node": "^5.0.2",
     "animate.css": "^4.1.1",
     "framer-motion": "^11.18.1",
     "gsap": "^3.12.7",
+    "howler": "^2.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1"
