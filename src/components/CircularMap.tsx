@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const CircularMap = () => {
   const [rotation, setRotation] = useState(0);
+  console.log(setRotation)
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
