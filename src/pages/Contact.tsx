@@ -40,7 +40,7 @@ const Contact = () => {
         formData,             
         'ArUS9zvkkgi1DygWw'     // Clé publique EmailJS
       );
-  
+    console.info(response)
       setStatus("Message envoyé avec succès !");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
