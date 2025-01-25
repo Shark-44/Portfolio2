@@ -36,7 +36,7 @@ const Contact = () => {
       // 🔴 REMPLACEZ CES VALEURS PAR LES VÔTRES :
       const response = await emailjs.send(
         'service_kodx7h7',     // ID du service EmailJS
-        'joanny.bernardeau@gmail.com',    // ID du template d'email
+        'template_ekat33v',    // ID du template d'email
         formData,             
         'ArUS9zvkkgi1DygWw'     // Clé publique EmailJS
       );
