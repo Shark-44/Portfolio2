@@ -21,6 +21,15 @@ function Navbar() {
             Mes projets
           </Link>
         </li>
+       {/*<li>
+          <Link
+            to="/Two"
+            className="block py-2 px-3 text-gray-200 hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-400"
+          >
+            two
+          </Link>
+          </li>
+        */}
         <li>
           <Link
             to="/Contact"

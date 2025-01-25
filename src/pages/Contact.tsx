@@ -9,6 +9,8 @@ import githubwh from '../assets/images/githubwh.png';
 
 import Navbar from "../components/Navbar";
 
+import emailjs from '@emailjs/browser';
+
 const Contact = () => {
   const [over1, setOver1] = useState(false);
   const [over2, setOver2] = useState(false);
@@ -29,35 +31,27 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); 
-      console.log("Formulaire soumis :", formData); 
     setIsSubmitting(true);
-    
-    console.log("Soumission en cours...");
-  
     try {
-      const response = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      // 🔴 REMPLACEZ CES VALEURS PAR LES VÔTRES :
+      const response = await emailjs.send(
+        'service_kodx7h7',     // ID du service EmailJS
+        'joanny.bernardeau@gmail.com',    // ID du template d'email
+        formData,             
+        'ArUS9zvkkgi1DygWw'     // Clé publique EmailJS
+      );
   
-      console.log("Réponse serveur :", response);
-  
-      if (response.ok) {
-        setStatus("Message envoyé avec succès !");
-        console.log("Message envoyé !");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Erreur lors de l'envoi du message.");
-        console.log("Erreur serveur :", response.status);
-      }
+      setStatus("Message envoyé avec succès !");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Erreur inattendue :", error);
-      setStatus("Une erreur inattendue est survenue.");
+      console.error("Erreur d'envoi :", error);
+      setStatus("Une erreur est survenue lors de l'envoi.");
     }
   
     setIsSubmitting(false);
   };
+  
+
   
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 p-6">

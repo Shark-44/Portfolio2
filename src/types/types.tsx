@@ -19,3 +19,10 @@ export interface Card {
       rotateX?: number;
     };
   }
+
+  // pour rotation carte
+
+  export interface CarteProps {
+    valeur: string; 
+    couleur: string; 
+  }
