@@ -132,7 +132,7 @@ const Contact = () => {
             <a href="https://www.linkedin.com/in/joanny-bernardeau-6a9b51bb" target="_blank"><img className="icone" src={over2 ? linkedinwh : linkedin} onMouseOver={() => setOver2(true)}
             onMouseOut={() => setOver2(false)} alt="linkedin" /></a>
 
-            <a href="https://1drv.ms/b/c/f1d07a223c005096/EaTPToTHVwdDl_Keqy21epUB16an95T-8uxqIlw092BUEg?e=52qJkg" target="_blank"><img className="icone" src={over4 ? CVwh : CV} onMouseOver={() => setOver4(true)}
+            <a href="https://1drv.ms/b/c/f1d07a223c005096/EVTzHH0cyEVPuXLMhVd86CMBR6NLkFTcvtMVYPaWzORi-g?e=TgX888" target="_blank"><img className="icone" src={over4 ? CVwh : CV} onMouseOver={() => setOver4(true)}
             onMouseOut={() => setOver4(false)} alt="cv" /></a>
             </div>
     </div>
